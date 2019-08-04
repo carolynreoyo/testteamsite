@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Our project just needs Font Awesome Solid + Brands -->
+    <link
+      href="/home/carolyn/Desktop/fontawesome-free-5.9.0-web/css/fontawesome.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/home/carolyn/Desktop/fontawesome-free-5.9.0-web/css/brands.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/home/carolyn/Desktop/fontawesome-free-5.9.0-web/css/solid.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .jumbotron {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        margin-bottom: 0;
+        background-color: #fff;
+      }
+      @media (min-width: 768px) {
+        .jumbotron {
+          padding-top: 6rem;
+          padding-bottom: 6rem;
+        }
+      }
+
+      .jumbotron p:last-child {
+        margin-bottom: 0;
+      }
+
+      .jumbotron-heading {
+        font-weight: 300;
+        text-align: right;
+      }
+
+      .jumbotron .container {
+        max-width: 40rem;
+      }
+
+      footer {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      footer p {
+        margin-bottom: 0.25rem;
+      }
+      /* the following css makes it possible for the carousel to function vertically(up/down) rather than horizontally(left/right) */
+      .vertical .carousel-item-next.carousel-item-left,
+      .vertical .carousel-item-prev.carousel-item-right {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+      }
+
+      .vertical .carousel-item-next,
+      .vertical .active.carousel-item-right {
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100% 0);
+      }
+
+      .vertical .carousel-item-prev,
+      .vertical .active.carousel-item-left {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+      }
+      .leftjust {
+        float: left !important;
+        text-align: left;
+      }
+      .parallax {
+        /* The image used */
+        background-image: url("dof6413.jpg");
+
+        /* Full height */
+        height: 500px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+      .parallax2 {
+        /* The image used */
+        background-color: blue;
+
+        /* Full height */
+        height: 600px;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    </style>
+    <script>
+      //var myself = document.getElementById("myself");
+      if ($("#myself")) {
+        console.log("hey");
+      } else {
+        console.log("poop");
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Mission Statement</h4>
+              <p class="text-muted">
+                Mission Statement Info?
+              </p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <h4 class="text-white">Contact</h4>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">About</a></li>
+                <li><a href="#" class="text-white">Sponsors</a></li>
+                <li><a href="#" class="text-white">Email me</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm">
+        <div class="container d-flex justify-content-between">
+          <a href="#" class="navbar-brand d-flex align-items-center">
+            <i class="fas fa-robot"></i>
+
+            <strong>Degrees of Freedom</strong>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarHeader"
+            aria-controls="navbarHeader"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main role="main">
+      <div class="parallax"></div>
+      <!--  <section class="jumbotron text-center">
+        <div class="container">
+          <div class="row">
+            <h1 class="col-6 jumbotron-heading">Freedom to</h1>
+            <div
+              id="carouselExampleSlidesOnly"
+              class="col-4 carousel vertical slide"
+              data-ride="carousel"
+              data-interval="200"
+            >
+              <div class="carousel-inner leftjust">
+                <div class="carousel-item active" data-interval="1000">
+                  <h1>Build</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1>Learn</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1>Succeed</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1>Grow</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1>Try</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1>Try Again</h1>
+                </div>
+                <div class="carousel-item" data-interval="1000">
+                  <h1 id="myself">Be Myself</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lead text-muted">
+            <h5>
+              Degrees of Freedom is a FIRST Robotics Competition team sponsored
+              by the Si Se Puede Foundation. Our mission is to empower everyone
+              in our community, no matter the gender identity, race, creed,
+              national origin, age, sexual orientation, or ability primarily
+              through the use of STEM education and opportunities
+            </h5>
+          </div>
+          <div class="container">
+            <a><i class="fab fa-2x fa-facebook-square"></i></a>
+            <a><i class="fab fa-2x fa-twitter"></i></a>
+            <a><i class="fab fa-2x fa-instagram"></i></a>
+            <a><i class="fab fa-2x fa-github"></i></a>
+          </div>
+        </div>
+      </section>
+    -->
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <h1 class="text-center">Students</h1>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card mb-3 border-primary  shadow-sm">
+                <div class="card-header border-primary">
+                  President
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!--<svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                > 
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg> -->
+                <div class="card-header border-primary">
+                  Elaina
+                </div>
+                <div class="card-body border-primary">
+                  <p class="card-text border-primary">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex border-primary justify-content-between align-items-center"
+                  >
+                    <small class="text-muted border-primary">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Vice President
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Sheyla
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Administrative Captain
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Gaby
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Sophmore</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Public Relations Captain
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Valeria
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Outreach Captain
+                </div>
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Tanisha
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Freshman</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Safety Captain
+                </div>
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Natali
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Sophmore</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Mechanical Captain
+                </div>
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Jessica
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Electrical Captain
+                </div>
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Stubby (Maria)
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Sophmore</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Programming Captain
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Mar (Mariia)
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Graphic Designer
+                </div>
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Yeimi
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <div class="card-header">
+                  Unofficial Mascot
+                </div>
+                <img src="mysillygoose.jpg" height="225" />
+                <!-- <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>-->
+                <div class="card-header">
+                  Mr.Silly Goose
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Stuffed Animal</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c" />
+                  </svg>-->
+                <div class="card-header">
+                  Maria
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c" />
+                  </svg>-->
+                <div class="card-header">
+                  Sarah
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Senior</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                    class="bd-placeholder-img card-img-top"
+                    width="100%"
+                    height="225"
+                    xmlns="http://www.w3.org/2000/svg"
+                    preserveAspectRatio="xMidYMid slice"
+                    focusable="false"
+                    role="img"
+                    aria-label="Placeholder: Thumbnail"
+                  >
+                    <title>Placeholder</title>
+                    <rect width="100%" height="100%" fill="#55595c" />
+                  </svg>-->
+                <div class="card-header">
+                  Lila
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Freshman</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="parallax2 album py-5 ">
+        <div class="container">
+          <h1 class="text-center">Mentors</h1>
+          <br />
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card mb-3 border-primary shadow-sm">
+                <img src="carojessenurc.jpg" height="225" />
+                <!-- <svg
+                      class="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="225"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice"
+                      focusable="false"
+                      role="img"
+                      aria-label="Placeholder: Thumbnail"
+                    >
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>-->
+                <div class="card-header">
+                  Carolyn
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Mentor Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">4 years</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 border-primary shadow-sm">
+                <img src="betty2.jpg" height="225" />
+                <!-- <svg
+                      class="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="225"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice"
+                      focusable="false"
+                      role="img"
+                      aria-label="Placeholder: Thumbnail"
+                    >
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>-->
+                <div class="card-header">
+                  Megan
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Mentor Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">4 years</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 border-primary shadow-sm">
+                <img src="betty.jpg" height="225" />
+                <!-- <svg
+                      class="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="225"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice"
+                      focusable="false"
+                      role="img"
+                      aria-label="Placeholder: Thumbnail"
+                    >
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>-->
+                <div class="card-header">
+                  Izzy
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Mentor Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">4 years</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 border-primary shadow-sm">
+                <img src="dan.jpg" height="225" />
+                <!-- <svg
+                      class="bd-placeholder-img card-img-top"
+                      width="100%"
+                      height="225"
+                      xmlns="http://www.w3.org/2000/svg"
+                      preserveAspectRatio="xMidYMid slice"
+                      focusable="false"
+                      role="img"
+                      aria-label="Placeholder: Thumbnail"
+                    >
+                      <title>Placeholder</title>
+                      <rect width="100%" height="100%" fill="#55595c" />
+                    </svg>-->
+                <div class="card-header">
+                  Dan
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Mentor Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">4 years</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <h1 class="text-center">Alumni</h1>
+          <br />
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="cam.jpg" height="225" />
+                <!-- <svg
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                        role="img"
+                        aria-label="Placeholder: Thumbnail"
+                      >
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" />
+                      </svg>-->
+                <div class="card-header">
+                  Camila
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2019</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="harleygia.jpg" height="225" />
+                <!-- <svg
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                        role="img"
+                        aria-label="Placeholder: Thumbnail"
+                      >
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" />
+                      </svg>-->
+                <div class="card-header">
+                  Gia
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2019</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="har.jpg" height="225" />
+                <!-- <svg
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                        role="img"
+                        aria-label="Placeholder: Thumbnail"
+                      >
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" />
+                      </svg>-->
+                <div class="card-header">
+                  Harley
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2019</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <img src="madeline2.jpg" height="225" />
+                <!-- <svg
+                        class="bd-placeholder-img card-img-top"
+                        width="100%"
+                        height="225"
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid slice"
+                        focusable="false"
+                        role="img"
+                        aria-label="Placeholder: Thumbnail"
+                      >
+                        <title>Placeholder</title>
+                        <rect width="100%" height="100%" fill="#55595c" />
+                      </svg>-->
+                <div class="card-header">
+                  Madeline
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2019</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row center ">
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>
+                <div class="card-header">
+                  Bailey
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2018</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card mb-3 shadow-sm">
+                <svg
+                  class="bd-placeholder-img card-img-top"
+                  width="100%"
+                  height="225"
+                  xmlns="http://www.w3.org/2000/svg"
+                  preserveAspectRatio="xMidYMid slice"
+                  focusable="false"
+                  role="img"
+                  aria-label="Placeholder: Thumbnail"
+                >
+                  <title>Placeholder</title>
+                  <rect width="100%" height="100%" fill="#55595c" />
+                </svg>
+                <div class="card-header">
+                  Bre
+                </div>
+                <div class="card-body">
+                  <p class="card-text">
+                    Student Bio
+                  </p>
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <small class="text-muted">Class of 2018</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Back to top</a>
+        </p>
+        <p>
+          Album example is &copy; Bootstrap, but please download and customize
+          it for yourself!
+        </p>
+        <p>
+          New to Bootstrap?
+          <a href="https://getbootstrap.com/">Visit the homepage</a> or read our
+          <a href="/docs/4.3/getting-started/introduction/"
+            >getting started guide</a
+          >.
+        </p>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );</script
+    ><script
+      src="/docs/4.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
