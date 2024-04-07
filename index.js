@@ -12,14 +12,14 @@
         var apiKey = "jrD3hPC2tBHcbtcCD8FMSdfYRGlDilzWSWR1a2afDZxAQthMkRL8AwBxLRBFfWyu";
         $.ajax({
             type: "GET",
-            url: "https://www.thebluealliance.com/api/v3/event/2024cmptx/teams/keys",
+            url: "https://www.thebluealliance.com/api/v3/event/2023cmptx/teams/keys",
             headers: { "X-TBA-Auth-Key": apiKey },
             success: function(result){
                 result.forEach(element => {
                     var apiKey = "jrD3hPC2tBHcbtcCD8FMSdfYRGlDilzWSWR1a2afDZxAQthMkRL8AwBxLRBFfWyu";
               $.ajax({
                     type: "GET",
-                    url: "https://www.thebluealliance.com/api/v3/team/"+element+"/awards/2024",
+                    url: "https://www.thebluealliance.com/api/v3/team/"+element+"/awards/2023",
                     headers: { "X-TBA-Auth-Key": apiKey },
                     success: function(result){
                         result.forEach(element =>{
